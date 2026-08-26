@@ -1,0 +1,346 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+  --blue: #12a3e6;
+  --green: #2f9e44;
+  --dark: #14181f;
+  --gradient: linear-gradient(135deg, #14181f, #0b3d63, #2f9e44);
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f2f4f6;
+  color: #222;
+}
+
+/* ---------- Giriş / Kayıt Ekranı ---------- */
+
+.auth-screen {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient);
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 10px;
+  padding: 40px;
+  max-width: 380px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.auth-card h1 {
+  all: unset;
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+
+.auth-subtitle {
+  color: #777;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+}
+
+.auth-card form {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.auth-card input {
+  margin-bottom: 12px;
+}
+
+.auth-card button {
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+}
+
+.auth-message-success {
+  color: var(--green);
+  margin-top: 12px;
+}
+
+.auth-message-error {
+  color: #c0392b;
+  margin-top: 12px;
+}
+
+.auth-toggle {
+  margin-top: 20px;
+  text-align: center;
+  color: #555;
+}
+
+.auth-toggle a {
+  color: var(--blue);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ---------- Ana Uygulama ---------- */
+
+.app-container {
+  min-height: 100vh;
+}
+
+.top-bar {
+  background: var(--gradient);
+  color: white;
+  padding: 24px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.top-bar h1 {
+  all: unset;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.top-bar-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+.logout-button {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+
+.logout-button:hover {
+  background-color: rgba(255, 255, 255, 0.28);
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.main-column {
+  min-width: 0;
+}
+
+.calendar-column {
+  min-width: 0;
+}
+
+@media (min-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr 1.4fr;
+  }
+  .calendar-column {
+    position: sticky;
+    top: 20px;
+  }
+}
+
+.section {
+  background: white;
+  border: 1px solid #dde3e8;
+  border-top: 4px solid;
+  border-image: linear-gradient(90deg, var(--blue), var(--green)) 1;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+h2 {
+  color: var(--dark);
+  border-bottom: 2px solid var(--blue);
+  padding-bottom: 8px;
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+input, select {
+  padding: 8px 10px;
+  border: 1px solid #c7d0d8;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+button {
+  background-color: var(--blue);
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #0d84bd;
+}
+
+.section-green button {
+  background-color: var(--green);
+}
+
+.section-green button:hover {
+  background-color: #24853a;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li button {
+  background-color: var(--dark);
+  border-radius: 4px;
+  padding: 6px 14px;
+}
+
+li button:hover {
+  background-color: #2a2f3a;
+}
+
+p {
+  color: #555;
+}
+
+/* ---------- Takvim ---------- */
+
+.rbc-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 10px;
+}
+
+.rbc-toolbar-label {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--dark);
+}
+
+.rbc-btn-group {
+  display: inline-flex;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #c7d0d8;
+}
+
+.rbc-btn-group button {
+  background: white;
+  color: var(--dark);
+  border: none;
+  border-radius: 0;
+  padding: 6px 14px;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.rbc-btn-group button:hover {
+  background: #eef6fb;
+}
+
+.rbc-btn-group button.rbc-active {
+  background: var(--blue);
+  color: white;
+}
+
+.rbc-event {
+  border-radius: 8px !important;
+  padding: 3px 8px !important;
+  font-size: 0.72rem !important;
+  line-height: 1.2 !important;
+}
+
+.rbc-event:hover {
+  filter: brightness(0.92);
+  cursor: pointer;
+}
+
+.rbc-today {
+  background-color: #eaf7ff !important;
+}
+
+.rbc-calendar {
+  width: 100% !important;
+}
+
+.calendar-toolbar-buttons {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  row-gap: 10px !important;
+  gap: 10px;
+}
+
+.calendar-toolbar-buttons .rbc-btn-group {
+  margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .calendar-toolbar-buttons {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+}
