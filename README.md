@@ -1,16 +1,29 @@
-# React + Vite
+# Toplantı Salonu Rezervasyon Sistemi — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React (Vite) ile geliştirilmiş, [rezervasyon-sistemi](https://github.com/eylulelidar/rezervasyon-sistemi) backend'ine bağlanan frontend uygulaması.
 
-Currently, two official plugins are available:
+## Özellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Kullanıcı kayıt / giriş ekranı
+- Rezervasyon oluşturma formu (salon seçimi, tarih/saat seçici)
+- Rezervasyonlarım (onaylanan / iptal edilen ayrımı)
+- Takvim görünümü (aylık/haftalık/günlük/ajanda, Türkçe)
+- Admin panelleri: salon yönetimi, kullanıcı yönetimi, tüm rezervasyonları görüntüleme/filtreleme
+- Responsive tasarım
 
-## React Compiler
+## Kullanılan Teknolojiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+React (Vite), Axios, React Router, React Big Calendar, Flatpickr, date-fns
 
-## Expanding the ESLint configuration
+## Kurulum
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Uygulama `http://localhost:5173` adresinde açılır. Backend'in `http://localhost:8080` portunda çalışıyor olması gerekir.
+
+## Geliştirici
+
+Eylül Gizem Elidar
