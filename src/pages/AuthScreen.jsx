@@ -20,6 +20,12 @@ function AuthScreen({ onLoginSuccess }) {
     setMessage(null);
     setError(null);
 
+    const passwordRules = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
+    if (!passwordRules.test(password)) {
+      setError('Şifre en az 8 karakter olmalı, en az bir harf ve bir rakam içermeli.');
+      return;
+    }
+
     registerUser({ name, email, password, role: 'USER' })
       .then(() => {
         setMessage('Kayıt başarılı! Şimdi giriş yapabilirsin.');
@@ -82,7 +88,7 @@ function AuthScreen({ onLoginSuccess }) {
             />
             <input
               type="password"
-              placeholder="Şifre"
+              placeholder="Şifre (en az 8 karakter, harf ve rakam)"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
