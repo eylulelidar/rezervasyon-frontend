@@ -13,6 +13,18 @@ function Register() {
     setMessage(null);
     setError(null);
 
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).+$/;
+
+    if (password.length < 8) {
+      setError('Kayıt başarısız: Şifre en az 8 karakter olmalıdır.');
+      return; 
+    }
+
+    if (!passwordRegex.test(password)) {
+      setError('Kayıt başarısız: Şifre en az bir harf ve en az bir sayı içermelidir.');
+      return; 
+    }
+
     registerUser({ name, email, password, role: 'USER' })
       .then((response) => {
         setMessage(`Kayıt başarılı! Hoş geldin, ${response.data.name}.`);
@@ -46,7 +58,7 @@ function Register() {
         />
         <input
           type="password"
-          placeholder="Şifre"
+          placeholder="Şifre (Min 8 karakter, harf ve sayı)"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
